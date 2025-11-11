@@ -1,0 +1,68 @@
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: "images"
+public_folder: "/images"
+
+collections:
+  - name: "config"
+    label: "Configuration du Site"
+    files:
+      - label: "Informations Générales"
+        name: "general"
+        file: "content/general.json"
+        fields:
+          - {label: "Nom du Cabinet", name: "cabinet_name", widget: "string", default: "EMERGENCE"}
+          - {label: "Slogan", name: "slogan", widget: "text", default: "Votre Partenaire en Recherche, Évaluation et Développement de Projets"}
+          - {label: "Description", name: "description", widget: "text"}
+          
+      - label: "Contact"
+        name: "contact"
+        file: "content/contact.json"
+        fields:
+          - {label: "Adresse", name: "address", widget: "string", default: "Port-au-Prince, Haïti"}
+          - {label: "Téléphone", name: "phone", widget: "string", default: "+509 XXXX-XXXX"}
+          - {label: "Email", name: "email", widget: "string", default: "contact@emergence.ht"}
+          - {label: "WhatsApp", name: "whatsapp", widget: "string"}
+          
+      - label: "Services"
+        name: "services"
+        file: "content/services.json"
+        fields:
+          - label: "Liste des Services"
+            name: "services_list"
+            widget: "list"
+            fields:
+              - {label: "Titre", name: "title", widget: "string"}
+              - {label: "Icône (emoji)", name: "icon", widget: "string"}
+              - {label: "Description", name: "description", widget: "text"}
+```
+
+4. **Cliquez "Commit new file"**
+
+---
+
+### PARTIE 2 : DÉPLOYER SUR NETLIFY (5 minutes)
+
+Maintenant on va mettre votre site sur Netlify.
+
+1. **Allez sur** : https://app.netlify.com
+
+2. **Cliquez "Sign up"** (Créer un compte)
+   - Choisissez **"Sign up with GitHub"**
+   - Autorisez Netlify à accéder à vos repositories
+
+3. **Une fois connecté**, cliquez sur **"Add new site"** → **"Import an existing project"**
+
+4. **Sélectionnez "Deploy with GitHub"**
+
+5. **Choisissez votre repository** : `Obed014/emergence-website`
+
+6. **Laissez les paramètres par défaut** et cliquez **"Deploy site"**
+
+7. **Attendez 1-2 minutes** ⏳
+
+8. 🎉 **Votre site est en ligne !** Vous aurez une URL type :
+```
+   https://random-name-123.netlify.app
